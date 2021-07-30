@@ -273,22 +273,19 @@ html {
   margin-top: 24px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 300px) {
   .__smilepay__footer {
     background: #dff4ff;
     max-width: 100%;
-    bottom: 0;
-    position: absolute;
+    /*  bottom: 0;
+    position: absolute; */
   }
-  .__smilepay__focards {
-    position: absolute;
-    bottom: 62px;
-    left: 50%;
-    transform: translateX(-50%);
+  .__smilepay__footer-cards {
+    margin-top: 80px;
   }
 }
 
-.absolute-0 {
+/* .absolute-0 {
   position: absolute;
   bottom: 0px;
 }
@@ -297,7 +294,7 @@ html {
   bottom: 62px;
   left: 50%;
   transform: translateX(-50%);
-}
+} */
 
 .__smilepay__popup-wrapper {
   height: 100vh !important;
