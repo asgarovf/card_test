@@ -30,6 +30,7 @@
             //$("input[name=cvv2]").mask("999");
         });
 
+
         function removeSpaces() {
                 var txtbox = document.getElementById('cardnr');
                 txtbox.value = txtbox.value.replace(/\s/g, "");
@@ -134,7 +135,7 @@
 
         <div class="__smilepay__form-group">
             <label class="__smilepay__text-input-label"  for="card_number">Kart nömrəsi</label>
-            <input placeholder="____ ____ ____ ____" type="text" class="__smilepay__text-input __smilepay__card-no" id="cardnr" name="cardnr" tabindex="1" class="input-block-level">
+            <input placeholder="____ ____ ____ ____" type="text" class="__smilepay__text-input __smilepay__card-no" id="cardnr" name="cardnr" tabindex="1" class="input-block-level" type="tel">
             <span class="__smilepay__error-message d-none">Kart nömrəsi düzgün deyil.</span>
             <div class="__smilepay_card-icon" id="__smilepay__default-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -303,10 +304,7 @@
 
                 const buttonHeight =  $(".__smilepay__confirm-button").offset().top + 48;
 
-
-
-                if(height - buttonHeight > 200){
-
+                if(height - buttonHeight > 250){
                 $("#__smilepay__footer").addClass("absolute-0")
                 $(".__smilepay__footer-cards").addClass("absolute-62")
             }
@@ -334,6 +332,7 @@
                 $("#__smilepay__default-icon").fadeIn()
             }
 
+/*             $("input[name=cardnr]").mask("?9999 9999 9999 9999"); */
         })
 
         $("#cardnr").on("change",()=>{
