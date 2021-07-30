@@ -407,6 +407,7 @@ body {
 
 .chzn-search {
   display: none;
+  pointer-events: none !important;
 }
 
 .chzn-container-single .chzn-single {

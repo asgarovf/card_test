@@ -28,6 +28,7 @@
         $(document).ready(function() {
            /*  $("input[name=cardnr]").mask("?9999 9999 9999 9999"); */
             //$("input[name=cvv2]").mask("999");
+            $(".chzn-search").remove()
             setInputFilter(document.getElementById("cardnr"), function(value) {
                 return /^(?=.*\d)[\d ]+$/.test(value) || value === ""; // Allow digits and '.' only, using a RegExp
             });
