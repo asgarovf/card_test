@@ -389,6 +389,7 @@
             } else{
                 $("#__smilepay__month-icon").removeClass("rotate180")
             }
+            $("#cardnr").blur()
         })
 
         $("#__smilepay__yearselect").click(()=>{
@@ -398,6 +399,7 @@
             else{
                 $("#__smilepay__year-icon").removeClass("rotate180")
             }
+            $("#cardnr").blur()
         })
 
         $(document).mouseup(function(e)
@@ -412,6 +414,30 @@
                 }
             }
         });
+
+        $(document).mouseup(function(e)
+        {
+            var container = $("#cardnr");
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                container.focusout()
+            }
+        });
+
+        $(document).mouseup(function(e)
+        {
+            var container = $(".chzn-results");
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                $("#__smilepay__year-icon").removeClass("rotate180")
+                $("#__smilepay__month-icon").removeClass("rotate180")
+            }
+        });
+
+
+
 
 
     </script>

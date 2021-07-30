@@ -309,13 +309,14 @@ body {
   height: 100vh !important;
   width: 100vw !important;
   background: rgba(0, 21, 32, 0.7);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 5000;
 }
 
 .__smilepay__popup {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
