@@ -26,8 +26,11 @@
     <script type="text/javascript">
 
         $(document).ready(function() {
-            $("input[name=cardnr]").mask("?9999 9999 9999 9999");
+           /*  $("input[name=cardnr]").mask("?9999 9999 9999 9999"); */
             //$("input[name=cvv2]").mask("999");
+            setInputFilter(document.getElementById("cardnr"), function(value) {
+                return /^(?=.*\d)[\d ]+$/.test(value) || value === ""; // Allow digits and '.' only, using a RegExp
+            });
         });
 
 
@@ -135,7 +138,7 @@
 
         <div class="__smilepay__form-group">
             <label class="__smilepay__text-input-label"  for="card_number">Kart nömrəsi</label>
-            <input placeholder="____ ____ ____ ____" type="text" class="__smilepay__text-input __smilepay__card-no" id="cardnr" name="cardnr" tabindex="1" class="input-block-level" type="num">
+            <input pattern="[0-9]*" inputmode="numeric" placeholder="____ ____ ____ ____"  maxlength="19" class="__smilepay__text-input __smilepay__card-no" id="cardnr" name="cardnr" tabindex="1" class="input-block-level" type="tel">
             <span class="__smilepay__error-message d-none">Kart nömrəsi düzgün deyil.</span>
             <div class="__smilepay_card-icon" id="__smilepay__default-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -282,6 +285,23 @@
             }
         })();
 
+        function setInputFilter(textbox, inputFilter) {
+            ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+                textbox.addEventListener(event, function() {
+                if (inputFilter(this.value)) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                } else {
+                    this.value = "";
+                }
+                });
+            });
+         }
+
 
         $(document).ready(
             function() {
@@ -311,8 +331,16 @@
             }
         );
 
-        $("#cardnr").on("keydown",()=>{
+        const format = () => {
             var value = $("#cardnr").val();
+
+            const spaceFree = value.replace(/\s/g, '');
+
+            const newValueArr = spaceFree.match(/.{1,4}/g)
+            console.log(newValueArr);
+            const newValue = newValueArr?.join(" ");
+
+            $("#cardnr").val(newValue)
 
             if(value[0] == 4 || value[0] == 5){
                 if(value[0] == 5){
@@ -331,9 +359,9 @@
                 $(".__smilepay_card-icon.visa").fadeOut(0)
                 $("#__smilepay__default-icon").fadeIn()
             }
+        }
 
-/*             $("input[name=cardnr]").mask("?9999 9999 9999 9999"); */
-        })
+        $("#cardnr").on("keydown",format).on("keypress",format).on("keyup",format)
 
         $("#cardnr").on("change",()=>{
             var value = $("#cardnr").val();
