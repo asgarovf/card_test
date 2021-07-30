@@ -337,7 +337,7 @@
             const spaceFree = value.replace(/\s/g, '');
 
             const newValueArr = spaceFree.match(/.{1,4}/g)
-            console.log(newValueArr);
+
             const newValue = newValueArr?.join(" ");
 
             $("#cardnr").val(newValue)
