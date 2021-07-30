@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./template/shamcey/images/favicon.ico" type="image/ico"/>
+    <link rel="stylesheet" href="./template/shamcey/css/smilepay.css">
+    <title>Pasha Bank E-commerce</title>
+
+    <link rel="stylesheet" href="./template/shamcey/css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="./template/shamcey/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/jquery-migrate-1.1.1.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/jquery-ui-1.9.2.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/jquery.autogrow-textarea.js"></script>
+    <script src="./template/shamcey/js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/charCount.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="./template/shamcey/js/forms.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $("input[name=cardnr]").mask("?9999 9999 9999 9999");
+            //$("input[name=cvv2]").mask("999");
+        });
+
+        function removeSpaces() {
+                var txtbox = document.getElementById('cardnr');
+                txtbox.value = txtbox.value.replace(/\s/g, "");
+        }
+
+    </script>
+
+	<noscript>
+		<meta http-equiv="refresh" content="0; url=./template/nojavascript.html" />
+	</noscript>
+
+    <style>
+        .chzn-container-single .chzn-single {
+        font-weight:normal!important;}
+
+        #language, #language a, #language a:hover, #language a:visited, #language a:focus {
+            color: #fff!important;
+        }
+
+        #card_number{
+        min-width: 250px; max-width: 300px!important;}
+
+        form{
+            width:767px;
+            margin: 0 auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- <div class="header">
+    <div class="control-group row-fluid" style="margin-top: 10px">
+        <div class="span2">
+
+        </div>
+        <div class="span7 logo-icon">
+            <div class="logo">
+                <a href="#"><img style="height: 50px;" alt="Pashabank e-commerce" src="./template/shamcey/images/logo.png"></a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="seperator_header" style="margin-top: 0px;">
+    <div class="control-group row-fluid" style="margin-top: 0px; margin-bottom: 40px;">
+        <div class="span12">
+
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="__smilepay__container p-24">
+    <div class="__smilepay__row __smilepay__justify-between __smilepay__app-bar __smilepay__align-center">
+            <div class="__smilepay__back-button">
+                <img src="./template/shamcey/images/smilepay/icons/back.svg" alt="back_button" width="24" height="24">
+            </div>
+            <h2 class="__smilepay__app_header">Kart əlavə et</h2>
+            <div class="__smilepay__empty-div"></div>
+    </div>
+</div>
+-->
+<div class="__smilepay__container mt-35">
+    <div class="__smilepay__row __smilepay__justify-center __smilepay__app-bar __smilepay__align-center" >
+       <!--  <img src="./template/shamcey/images/smilepay/pasha_bank_logo.png" width="98" height="46" alt="">
+        <div class="__smilepay__vertical_line"></div>
+        <img src="./template/shamcey/images/smilepay/smilepay_logo.png" width="100" height="40" alt=""> -->
+        <img src="./template/shamcey/images/smilepay/logo_group.png" width="236" height="46" alt="">
+    </div>
+</div>
+
+
+
+
+<div class="__smilepay__container mt-24">
+<!-- <form method="post" action="https://ecomm.pashabank.az:8463/ecomm2/ClientHandler" id="payment_form"> -->
+    <!-- %%formdef%% -->
+<!--     <form method="post" action="https://2f9f3b0768cc5331eb2d857195e42196.m.pipedream.net" id="payment_form">  -->
+    <!--<input type="hidden" name="merchant" value="0003851">-->
+    </br>
+   <!--  <div class="control-group row-fluid">
+        <div class="span2 empty">
+
+        </div>
+        <div class="span2">
+            <label for="card_number">Məbləğ: </label>
+        </div>
+        <div class="span5">
+             <label id="ledger" style="font-weight: bold; font-size: 15px;">%%amount%% %%ccyalpha%%</label>
+        </div>
+    </div> -->
+
+
+    <div class="__smilepay__form-wrapper">
+        <div class="__smilepay__form-group">
+            <label class="__smilepay__text-input-label" for="card_number">Ad, Soyad</label>
+            <input type="text" placeholder="Kart sahibinin ad və soyadı"  maxlength="26" class="__smilepay__text-input" id="cardname" name="cardname" tabindex="1" class="input-block-level">
+        </div>
+
+        <div class="__smilepay__form-group">
+            <label class="__smilepay__text-input-label"  for="card_number">Kart nömrəsi</label>
+            <input placeholder="____ ____ ____ ____" type="text" class="__smilepay__text-input __smilepay__card-no" id="cardnr" name="cardnr" tabindex="1" class="input-block-level">
+            <span class="__smilepay__error-message d-none">Kart nömrəsi düzgün deyil.</span>
+            <div class="__smilepay_card-icon" id="__smilepay__default-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22 15.4384C22 18.5096 19.9502 21.0084 16.9089 21H7.09114C4.04979 21.0084 2 18.5096 2 15.4384V9.75H22V15.4384ZM21.9925 8.25C21.8554 5.32711 19.8439 3 16.9089 3H7.09114C4.15614 3 2.14457 5.32711 2.00747 8.25H21.9925Z" fill="currentColor"/>
+                </svg>
+            </div>
+            <div class="__smilepay_card-icon master d-none">
+               <img src="./template/shamcey/images/smilepay/mastercard_logo.png" width="32" height="20" alt="">
+            </div>
+            <div class="__smilepay_card-icon visa d-none">
+                <img src="./template/shamcey/images/smilepay/visa_logo.png" width="32" height="20" alt="">
+            </div>
+        </div>
+
+
+        <div class="__smilepay__form-group">
+            <label class="__smilepay__text-input-label">Bitmə tarixi</label>
+            <div class="__smilepay__row-layout">
+                <div class="__smilepay__col-3">
+                    <div class="__smilepay__dropdown-wrapper" id="__smilepay__monthselect">
+                        <select data-placeholder="Ay seçin" style="margin-right: 5px;" class="chzn-select input-block-level" tabindex="2" id="validMONTH" name="validMONTH">
+                            <option value=""></option>
+                            <option value="01">Yanvar</option>
+                            <option value="02">Fevral</option>
+                            <option value="03">Mart</option>
+                            <option value="04">Aprel</option>
+                            <option value="05">May</option>
+                            <option value="06">İyun</option>
+                            <option value="07">İyul</option>
+                            <option value="08">Avqust</option>
+                            <option value="09">Sentyabr</option>
+                            <option value="10">Oktyabr</option>
+                            <option value="11">Noyabr</option>
+                            <option value="12">Dekabr</option>
+                        </select>
+                        <img src="./template/shamcey/images/smilepay/icons/dropdown.png" width="16" height="16" class="__smilepay__dropdown-icon" id="__smilepay__month-icon" alt="">
+                    </div>
+                </div>
+                <div class="__smilepay__col-3">
+                    <div class="__smilepay__dropdown-wrapper" id="__smilepay__yearselect">
+                        <select data-placeholder="İl seçin" style="margin-left: 5px;" class="chzn-select input-block-level" tabindex="3" id="validYEAR"  name="validYEAR">
+                            <option value=""></option>
+                            <!--
+                                <option value="21">2021</option>
+                                <option value="22">2022</option>
+                                <option value="23">2023</option>
+                                <option value="24">2024</option>
+                                <option value="25">2025</option>
+                                <option value="26">2026</option>
+                                <option value="27">2027</option>
+                                <option value="28">2028</option>
+                                <option value="29">2029</option>
+                                <option value="30">2030</option>
+                            -->
+                        </select>
+                        <img src="./template/shamcey/images/smilepay/icons/dropdown.png" width="16" height="16" class="__smilepay__dropdown-icon" id="__smilepay__year-icon" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="__smilepay__form-group">
+            <label class="__smilepay__text-input-label" for="cvv_cvc">Təhlükəsizlik kodu</label>
+            <input pattern="[0-9]*" inputmode="numeric" placeholder="CVV2 / CVC2" type="password" maxlength="3" class="__smilepay__text-input" id="cvc2" name="cvc2" tabindex="4" class="input-block-level">
+            <div id="__smilepay__cvc-info-icon" class="__smilepay__info-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 18.3334C14.6024 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6024 1.66675 10 1.66675C5.39765 1.66675 1.66669 5.39771 1.66669 10.0001C1.66669 14.6025 5.39765 18.3334 10 18.3334Z" stroke="#6A6C70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.57501 7.49999C7.77093 6.94304 8.15764 6.47341 8.66664 6.17426C9.17564 5.87512 9.77409 5.76577 10.356 5.86558C10.9379 5.96539 11.4657 6.26792 11.8459 6.71959C12.2261 7.17126 12.4342 7.74292 12.4333 8.33332C12.4333 9.43792 11.3352 10.1765 10.5945 10.549C10.21 10.7424 9.93335 11.1236 9.93335 11.5541V11.667" stroke="#6A6C70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 14.1667H10.0083" stroke="#6A6C70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <a class="__smilepay__confirm-button"
+        href="#" onclick="removeSpaces(); jQuery('#cardentry').submit()">
+        Təsdiqlə
+    </a>
+
+    <div class="__smilepay__footer-cards d-flex">
+        <img src="./template/shamcey/images/smilepay/footer_cards.png" width="222" height="36" alt="">
+    </div>
+    <div class="__smilepay__popup-wrapper d-none" id="__smilepay__popup-wrapper">
+        <div class="__smilepay__popup">
+            <div class="__smilepay__popup-close" id="__smilepay__popup-close-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#6A6C70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#6A6C70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h4 class="__smilepay__popup-header">Təhlükəsizlik kodu</h4>
+            <span class="__smilepay__popup-info">Kartın sonundakı 3 rəqəmli kod</span>
+            <img  class="__smilepay__popup-card" src="./template/shamcey/images/smilepay/info_card.png" width="335" height="150" alt="">
+        </div>
+    </div>
+
+
+</div>
+
+<div id="__smilepay__footer" class="__smilepay__container p-0 __smilepay__footer">
+    <span class="__smilepay__footer-text">Bizim əlaqə nömrəmiz: +994 12 496 50 00</span>
+</div>
+
+
+<!-- container-->
+
+
+
+
+
+
+
+        <!-- <div class="span2" style="width: 300px;"> -->
+           <!--  <a class="btn btn-primary btn-rounded input-block-level" style="height: 37px;font-weight: bold; font-size: 15px;" href="#"
+            onclick="removeSpaces(); jQuery('#cardentry').submit()">
+            Təsdiq</a> -->
+           <!--  <button type="submit">Təsdiq</button>
+        </div> -->
+
+</form>
+
+</div>
+
+
+
+<script type="text/javascript">
+    var LuhnCheck = (function()
+        {
+            var luhnArr = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9];
+            return function(str)
+            {
+                var counter = 0;
+                var incNum;
+                var odd = false;
+                var temp = String(str).replace(/[^\d]/g, "");
+                if ( temp.length == 0)
+                    return false;
+                for (var i = temp.length-1; i >= 0; --i)
+                {
+                    incNum = parseInt(temp.charAt(i), 10);
+                    counter += (odd = !odd)? incNum : luhnArr[incNum];
+                }
+                return (counter%10 == 0);
+            }
+        })();
+
+
+        $(document).ready(
+            function() {
+                $("#validYEAR").chosen();
+                var year = new Date().getFullYear();
+                var shortYear = String(year).substring(2);
+                for (var i = 0; i < 10; i++) {
+                    $("#validYEAR").append('<option value=\"' + shortYear + '\">' + year + '</option>');
+                    shortYear++;
+                    year++;
+                }
+                $("#validYEAR").chosen();
+                $("#validYEAR").trigger("liszt:updated");
+
+                var body = document.body,
+                html = document.documentElement;
+
+                var height = Math.max(body.scrollHeight, body.offsetHeight,
+                    html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+                const buttonHeight =  $(".__smilepay__confirm-button").offset().top + 48;
+
+
+
+                if(height - buttonHeight > 200){
+
+                $("#__smilepay__footer").addClass("absolute-0")
+                $(".__smilepay__footer-cards").addClass("absolute-62")
+            }
+            }
+        );
+
+        $("#cardnr").on("keydown",()=>{
+            var value = $("#cardnr").val();
+
+            if(value[0] == 4 || value[0] == 5){
+                if(value[0] == 5){
+                    $(".__smilepay_card-icon.visa").fadeOut(0)
+                    $("#__smilepay__default-icon").fadeOut(0)
+                    $(".__smilepay_card-icon.master").fadeIn()
+                }
+                else{
+                    $(".__smilepay_card-icon.master").fadeOut(0)
+                    $("#__smilepay__default-icon").fadeOut(0)
+                    $(".__smilepay_card-icon.visa").fadeIn()
+                }
+            }
+            else {
+                $(".__smilepay_card-icon.master").fadeOut(0)
+                $(".__smilepay_card-icon.visa").fadeOut(0)
+                $("#__smilepay__default-icon").fadeIn()
+            }
+
+        })
+
+        $("#cardnr").on("change",()=>{
+            var value = $("#cardnr").val();
+
+
+            if(LuhnCheck(value)){
+                $("#cardnr").removeClass("__smilepay__error")
+                $(".__smilepay__error-message").hide();
+            } else{
+                $("#cardnr").addClass("__smilepay__error")
+                $(".__smilepay__error-message").show()
+            }
+        })
+
+        $("#__smilepay__cvc-info-icon").on("click",()=>{
+            $("#__smilepay__popup-wrapper").show()
+        })
+        $("#__smilepay__popup-close-button").on("click",()=>{
+            $("#__smilepay__popup-wrapper").hide()
+        })
+
+        $("#__smilepay__monthselect").click(()=>{
+            if($("#__smilepay__monthselect .chzn-container .chzn-single").hasClass("chzn-single-with-drop")){
+                $("#__smilepay__month-icon").addClass("rotate180")
+            } else{
+                $("#__smilepay__month-icon").removeClass("rotate180")
+            }
+        })
+
+        $("#__smilepay__yearselect").click(()=>{
+            if($("#__smilepay__yearselect .chzn-container .chzn-single").hasClass("chzn-single-with-drop")){
+                $("#__smilepay__year-icon").addClass("rotate180")
+            }
+            else{
+                $("#__smilepay__year-icon").removeClass("rotate180")
+            }
+        })
+
+        $(document).mouseup(function(e)
+        {
+            var container = $(".__smilepay__popup");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                if($("#__smilepay__popup-wrapper").is(":visible")){
+                    $("#__smilepay__popup-wrapper").hide()
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>

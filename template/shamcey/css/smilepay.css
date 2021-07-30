@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/* Colors */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100% !important;
+}
+
+:root {
+  --neutral-light-2: #ecedf0;
+  --neutral-light-4: #d4d6db;
+  --neutral-gray-1: #9b9da3;
+  --neutral-gray-6: #6a6c70;
+  --button-color: #0095e0;
+}
+
+/* Custom Styles */
+
+.__smilepay__container {
+  max-width: 448px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+  margin: auto;
+}
+
+.__smilepay__container.p-24 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.__smilepay__container.p-0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.__smilepay__container.__smilepay__footer {
+  background-color: #dff4ff;
+}
+
+.__smilepay__row {
+  display: flex;
+}
+
+.__smilepay__justify-center {
+  justify-content: center !important;
+}
+
+.__smilepay__justify-between {
+  justify-content: space-between !important;
+}
+
+.__smilepay__align-center {
+  align-items: center !important;
+}
+
+.__smilepay__back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neutral-light-2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.__smilepay__back-button:hover {
+  background-color: var(--neutral-light-4);
+}
+
+.__smilepay__app-bar {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+@media (min-width: 500px) {
+  .__smilepay__app-bar {
+    padding-top: 12px !important;
+  }
+}
+
+.__smilepay__app_header {
+  font-family: "Poppins", sans-serif !important;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.__smilepay__flex-grow-1 {
+  flex: 1;
+}
+
+.__smilepay__empty-div {
+  width: 44px;
+  height: 44px;
+}
+
+.mt-35 {
+  margin-top: 35px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+
+.__smilepay__vertical_line {
+  border-right: 1px solid var(--neutral-light-4);
+  height: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.__smilepay__text-input-label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 8px;
+  color: var(--neutral-gray-6);
+}
+
+.__smilepay__text-input {
+  width: 100% !important;
+  height: 48px !important;
+  border: 1px solid var(--neutral-light-4) !important;
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  border-radius: 10px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  color: black !important;
+}
+
+.__smilepay__text-input.__smilepay__error {
+  border: 1px solid #df0028 !important;
+  background-color: #ffdfe5 !important;
+}
+
+.__smilepay__text-input:focus {
+  border-color: #0095e0 !important;
+  box-shadow: none !important;
+}
+
+.__smilepay__text-input.__smilepay__card-no {
+  padding-left: 52px !important;
+}
+
+.__smilepay__text-input.__smilepay__card-no::placeholder {
+  color: #6a6c70 !important;
+}
+
+#6A6C70 .__smilepay__text-input::placeholder {
+  color: var(--neutral-gray-6);
+}
+
+.__smilepay__form-group {
+  position: relative;
+}
+
+.__smilepay__form-group:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.__smilepay_card-icon {
+  color: var(--neutral-gray-1);
+  position: absolute;
+  top: 38px;
+  left: 18px;
+}
+
+.__smilepay_card-icon.visa {
+  left: 14px !important;
+  top: 42px;
+}
+.__smilepay_card-icon.master {
+  left: 14px !important;
+  top: 42px;
+}
+
+.__smilepay__row-layout {
+  display: flex;
+  flex: 6;
+}
+
+.__smilepay__col-3 {
+  flex: 3;
+}
+
+.__smilepay__col-3:not(:last-child) {
+  margin-right: 20px;
+}
+
+.__smilepay__info-icon {
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  cursor: pointer;
+}
+
+.__smilepay__confirm-button {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  display: flex;
+  border-radius: 14px;
+  margin-top: 24px;
+  font-family: "Poppins", sans-serif !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  color: white !important;
+  background-color: #0095e0;
+  text-decoration: none;
+}
+
+.__smilepay__confirm-button:hover {
+  background-color: #0080c0;
+  color: white !important;
+  text-decoration: none;
+}
+
+.__smilepay__confirm-button:active {
+  background-color: #0080c0;
+  color: white;
+  text-decoration: none;
+}
+.__smilepay__confirm-button:focus {
+  background-color: #0080c0;
+  color: white;
+  text-decoration: none;
+}
+
+.__smilepay__footer-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px !important;
+  line-height: 14px;
+  color: #002b40;
+  opacity: 0.8;
+}
+
+.__smilepay__footer {
+  background: #dff4ff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-top: 14px;
+}
+
+.__smilepay__footer-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+@media (min-width: 500px) {
+  .__smilepay__footer {
+    background: #dff4ff;
+    max-width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+  .__smilepay__focards {
+    position: absolute;
+    bottom: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.absolute-0 {
+  position: absolute;
+  bottom: 0px;
+}
+.absolute-62 {
+  position: absolute;
+  bottom: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.__smilepay__popup-wrapper {
+  height: 100vh !important;
+  width: 100vw !important;
+  background: rgba(0, 21, 32, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.__smilepay__popup {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 360px;
+  background-color: white;
+  z-index: 5000;
+  border-radius: 20px 20px 0px 0px;
+  background: #f9f9fa;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.__smilepay__popup-header {
+  margin-top: 48px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px !important;
+  line-height: 24px;
+  margin-bottom: 0px;
+}
+.__smilepay__popup-info {
+  margin-top: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6a6c70;
+}
+.__smilepay__popup-card {
+  margin-top: 24px;
+}
+
+.__smilepay__popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background-color: #f3f3f5;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.__smilepay__popup-close:hover {
+  background-color: var(--neutral-light-4);
+}
+
+.__smilepay__error-message {
+  margin-top: 8px;
+  color: #df0028;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px !important;
+  line-height: 14px !important;
+}
+
+.__smilepay__dropdown-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.__smilepay__dropdown-icon {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  pointer-events: none;
+}
+
+/* Existing Class Modifications */
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+#payment_form {
+  width: 100% !important;
+}
+
+.chzn-search {
+  display: none;
+}
+
+.chzn-container-single .chzn-single {
+  background-color: white !important;
+  color: black !important;
+  width: 100% !important;
+  height: 48px !important;
+  border: 1px solid var(--neutral-light-4) !important;
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  border-radius: 10px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  color: black !important;
+  display: flex;
+  align-items: center;
+}
+
+.chzn-container-single .chzn-single span {
+  color: var(--neutral-gray-6);
+  font-family: "Poppins", sans-serif;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  top: 8px !important;
+  position: relative;
+  margin-right: 15px !important;
+}
+
+.chzn-container-active .chzn-single-with-drop div {
+  display: none !important;
+}
+
+.chzn-drop {
+  top: 56px !important;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.16) !important;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.chzn-results {
+  margin: 0 !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  border: 1px solid #d4d6db;
+  border-radius: 10px;
+}
+
+.chzn-container .chzn-results .active-result {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  padding-left: 17px !important;
+  padding-right: 17px !important;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+.active-result:not(:last-child) {
+  border-bottom: 1px solid var(--neutral-light-2);
+  border-top-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+}
+
+.chzn-container .chzn-results .highlighted {
+  background-color: var(--neutral-light-2) !important;
+  color: black !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+.chzn-single-with-drop {
+  border: 1px solid #0095e0 !important;
+}
+
+.chzn-container-active .chzn-single-with-drop {
+  border: 1px solid #0095e0 !important;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
