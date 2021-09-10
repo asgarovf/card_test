@@ -237,6 +237,11 @@ body {
   text-decoration: none;
 }
 
+.__smilepay__confirm-button.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .__smilepay__confirm-button:hover {
   background-color: #0080c0;
   color: white !important;

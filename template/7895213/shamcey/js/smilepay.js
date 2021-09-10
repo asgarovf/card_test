@@ -151,3 +151,42 @@ var LuhnCheck = (function () {
   };
 })();
 /* */
+
+/**
+ * Handle Submit Button's disabled state
+ */
+
+function handleDisabled() {
+  let nameCheck = $("#cardname").val().length !== 0;
+  let nrCheck =
+    ($("#cardnr").val().length === 19 && $("#cardnr").val().includes(" ")) ||
+    ($("#cardnr").val().length === 16 && !$("#cardnr").val().includes(" "));
+  let cvcCheck = $("#cvc2").val().length === 3;
+  let yearCheck =
+    $("#validYEAR").val() !== "" && $("#validYEAR").val().length !== 0;
+  let monthCheck =
+    $("#validMONTH").val() !== "" && $("#validMONTH").val().length !== 0;
+  /*   let errorCheck = !$("#cardnr").hasClass("__smilepay__error"); */
+
+  if (
+    nameCheck &&
+    nrCheck &&
+    cvcCheck &&
+    yearCheck &&
+    monthCheck /* &&
+    errorCheck */
+  ) {
+    $(".__smilepay__confirm-button").removeClass("disabled");
+  } else {
+    $(".__smilepay__confirm-button").addClass("disabled");
+  }
+}
+
+$("#cardname,#cardnr,#cvc2")
+  .on("keydown", handleDisabled)
+  .on("keyup", handleDisabled)
+  .on("keypress", handleDisabled);
+
+$("#validYEAR, #validMONTH").on("change", () => {
+  handleDisabled();
+});
