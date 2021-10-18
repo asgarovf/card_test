@@ -281,9 +281,13 @@ body {
 }
 
 .__smilepay__footer-cards {
-  display: flex;
-  justify-content: center;
   margin-top: 24px;
+}
+
+.__smilepay__footer-cards-img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .__smilepay__progress-container {
