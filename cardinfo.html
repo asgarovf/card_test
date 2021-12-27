@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="./template/7895213/shamcey/images/favicon.ico" type="image/ico"/>
     <link rel="stylesheet" href="./template/7895213/shamcey/css/smilepay.css">
     <title>Pasha Bank E-commerce</title>
@@ -67,14 +67,10 @@
         </div>
     </div>
 
-    <!-- Start Container-->
     <div class="__smilepay__container mt-24">
     <!-- <form method="post" action="https://ecomm.pashabank.az:8463/ecomm2/ClientHandler" id="payment_form"> -->
         %%formdef%%
-      <!--   <form method="post" action="https://2f9f3b0768cc5331eb2d857195e42196.m.pipedream.net" id="payment_form"> -->
-        <!--<input type="hidden" name="merchant" value="0003851">-->
         </br>
-        <!-- Start Form Wrapper-->
         <div class="__smilepay__form-wrapper">
 
             <!-- Start Form Group-->
@@ -165,7 +161,7 @@
         </div>
         <!-- End Form Wrapper-->
 
-        <a class="__smilepay__confirm-button disabled"
+        <a id="__smilepay__submit__button" class="__smilepay__confirm-button disabled"
             href="#" onclick="removeSpaces(); jQuery('#cardentry').submit()">
             Təsdiqlə
         </a>
@@ -196,29 +192,7 @@
             <span class="__smilepay__footer-text">Bizim əlaqə nömrəmiz: +994 12 496 50 00</span>
         </div>
     </div>
-
     </form>
-
-
-    <script type="text/javascript">
-        /* Position Footer Cards */
-       /*  $(document).ready(
-            function() {
-                var body = document.body,
-                html = document.documentElement;
-
-                var height = Math.max(body.scrollHeight, body.offsetHeight,
-                    html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-                const buttonHeight =  $(".__smilepay__confirm-button").offset().top + 48;
-
-                if(height - buttonHeight > 300){
-                    $("#__smilepay__footer").addClass("absolute-0")
-                    $(".__smilepay__footer-cards").addClass("absolute-62")
-                }
-            }
-        ); */
-    </script>
     <script src="./template/7895213/shamcey/js/smilepay.js"></script>
     </body>
 </html>

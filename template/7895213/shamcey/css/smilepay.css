@@ -16,6 +16,7 @@ body {
   height: 100%;
   justify-content: space-between;
   min-height: 100vh;
+  background-color: var(--background-color) !important;
 }
 
 :root {
@@ -24,6 +25,7 @@ body {
   --neutral-gray-1: #9b9da3;
   --neutral-gray-6: #6a6c70;
   --button-color: #0095e0;
+  --background-color: #f9f9fa;
 }
 
 /* Custom Styles */
