@@ -26,22 +26,10 @@ function setInputFilter(textbox, inputFilter) {
     });
   });
 }
-
-let blockedKeys = [
-  "Backspace",
-  "ArrowLeft",
-  "ArrowRight",
-  "ArrowUp",
-  "ArrowDown",
-];
-let allowedKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+/* */
 
 /* Detect card type and apply styling */
-const format = (e) => {
-  if (blockedKeys.includes(e.key) && !allowedKeys.includes(e.key)) {
-    return;
-  }
-
+const format = () => {
   var value = $("#cardnr").val();
 
   const spaceFree = value.replace(/\s/g, "");
@@ -169,19 +157,17 @@ var LuhnCheck = (function () {
  */
 
 function handleDisabled() {
-  let nameCheck = document.getElementById("cardname").value.length !== 0;
+  let nameCheck = $("#cardname").val().length !== 0;
   let nrCheck =
-    (document.getElementById("cardnr").value.length === 19 &&
-      document.getElementById("cardnr").value.includes(" ")) ||
-    (document.getElementById("cardnr").value.length === 16 &&
-      !document.getElementById("cardnr").value.includes(" "));
-  let cvcCheck = document.getElementById("cvc2").value.length === 3;
+    ($("#cardnr").val().length === 19 && $("#cardnr").val().includes(" ")) ||
+    ($("#cardnr").val().length === 16 && !$("#cardnr").val().includes(" "));
+  let cvcCheck = $("#cvc2").val().length === 3;
   let yearCheck =
-    document.getElementById("validYEAR").value !== "" &&
-    document.getElementById("validYEAR").value.length !== 0;
+    $("#validYEAR").chosen().val() !== "" &&
+    $("#validYEAR").chosen().val().length !== 0;
   let monthCheck =
-    document.getElementById("validMONTH").length !== "" &&
-    document.getElementById("validMONTH").value.length !== 0;
+    $("#validMONTH").chosen().val() !== "" &&
+    $("#validMONTH").chosen().val().length !== 0;
   /*   let errorCheck = !$("#cardnr").hasClass("__smilepay__error"); */
 
   if (
@@ -192,36 +178,21 @@ function handleDisabled() {
     monthCheck /* &&
     errorCheck */
   ) {
-    document
-      .getElementById("__smilepay__submit__button")
-      .classList.remove("disabled");
-    //$(".__smilepay__confirm-button").removeClass("disabled");
+    $(".__smilepay__confirm-button").removeClass("disabled");
   } else {
-    document
-      .getElementById("__smilepay__submit__button")
-      .classList.add("disabled");
-    //$(".__smilepay__confirm-button").addClass("disabled");
+    $(".__smilepay__confirm-button").addClass("disabled");
   }
 }
 
-document.getElementById("cardname").addEventListener("keydown", handleDisabled);
-document.getElementById("cardname").addEventListener("keyup", handleDisabled);
-document
-  .getElementById("cardname")
-  .addEventListener("keypress", handleDisabled);
+$("#cardname,#cardnr,#cvc2")
+  .on("keydown", handleDisabled)
+  .on("keyup", handleDisabled)
+  .on("keypress", handleDisabled);
 
-document.getElementById("cardnr").addEventListener("keydown", handleDisabled);
-document.getElementById("cardnr").addEventListener("keyup", handleDisabled);
-document.getElementById("cardnr").addEventListener("keypress", handleDisabled);
+$("#validYEAR, #validMONTH").on("change", () => {
+  handleDisabled();
+});
 
-document.getElementById("cvc2").addEventListener("keydown", handleDisabled);
-document.getElementById("cvc2").addEventListener("keyup", handleDisabled);
-document.getElementById("cvc2").addEventListener("keypress", handleDisabled);
-
-document
-  .getElementById("validYEAR")
-  .addEventListener("change", handleDisabled());
-
-document
-  .getElementById("validMONTH")
-  .addEventListener("change", handleDisabled());
+$("#validYEAR, #validMONTH").on("blur", () => {
+  handleDisabled();
+});

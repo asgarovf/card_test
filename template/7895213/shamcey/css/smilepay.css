@@ -16,7 +16,7 @@ body {
   height: 100%;
   justify-content: space-between;
   min-height: 100vh;
-  background-color: var(--background-color) !important;
+  background-color: white;
 }
 
 :root {
